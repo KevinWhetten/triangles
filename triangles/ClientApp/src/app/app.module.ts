@@ -5,10 +5,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {TriangleComponent} from './home/triangle.component';
-import {SideInputsComponent} from './home/side-inputs/side-inputs.component';
-import {ResultsComponent} from "./home/results/results.component";
-import {ValidityComponent} from './home/results/validity/validity.component';
+import {TriangleComponent} from './triangle/triangle.component';
+import {SideInputsComponent} from './triangle/side-inputs/side-inputs.component';
+import {ResultsComponent} from "./triangle/results/results.component";
+import {ValidityComponent} from './triangle/results/validity/validity.component';
 
 @NgModule({
   declarations: [

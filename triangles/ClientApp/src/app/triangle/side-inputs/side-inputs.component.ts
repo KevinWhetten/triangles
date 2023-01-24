@@ -23,15 +23,15 @@ export class SideInputsComponent {
   }
 
   private inputValidated() {
-    if (this.sideA < 0) {
+    if (this.sideA < 0 || this.sideA === null) {
       this.sideA = NaN;
       return false;
     }
-    if (this.sideB < 0) {
+    if (this.sideB < 0 || this.sideB === null) {
       this.sideB = NaN;
       return false;
     }
-    if (this.sideC < 0) {
+    if (this.sideC < 0 || this.sideC === null) {
       this.sideC = NaN;
       return false;
     }
