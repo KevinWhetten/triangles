@@ -5,7 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {TriangleComponent} from './triangle/triangle.component';
+import {MainComponent} from './triangle/main.component';
 import {SideInputsComponent} from './triangle/side-inputs/side-inputs.component';
 import {ResultsComponent} from "./triangle/results/results.component";
 import {ValidityComponent} from './triangle/results/validity/validity.component';
@@ -13,7 +13,7 @@ import {ValidityComponent} from './triangle/results/validity/validity.component'
 @NgModule({
   declarations: [
     AppComponent,
-    TriangleComponent,
+    MainComponent,
     SideInputsComponent,
     ResultsComponent,
     ValidityComponent
@@ -23,7 +23,7 @@ import {ValidityComponent} from './triangle/results/validity/validity.component'
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: '', component: TriangleComponent, pathMatch: 'full'},
+      {path: '', component: MainComponent, pathMatch: 'full'},
     ])
   ],
   providers: [],
