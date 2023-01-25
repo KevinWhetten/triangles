@@ -19,7 +19,7 @@ describe('TriangleService', () => {
     service.sideB = 4;
     service.sideC = 5;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('valid');
   });
@@ -29,7 +29,7 @@ describe('TriangleService', () => {
     service.sideB = 1;
     service.sideC = 1.99;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('valid');
   });
@@ -39,7 +39,7 @@ describe('TriangleService', () => {
     service.sideB = 1;
     service.sideC = 1;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('invalid');
   });
@@ -49,7 +49,7 @@ describe('TriangleService', () => {
     service.sideB = 5;
     service.sideC = 1;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('invalid');
   });
@@ -59,7 +59,7 @@ describe('TriangleService', () => {
     service.sideB = 1;
     service.sideC = 5;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('invalid');
   });
@@ -69,7 +69,7 @@ describe('TriangleService', () => {
     service.sideB = 1;
     service.sideC = 2;
 
-    service.validateTriangle();
+    service.validate();
 
     expect(service.validity).toEqual('invalid');
   });
@@ -79,7 +79,8 @@ describe('TriangleService', () => {
     service.sideB = 1;
     service.sideC = 1;
 
-    service.getTriangleAngleClassification();
+    service.setTriangleAngles();
+    service.setTriangleAngleClassification();
 
     expect(service.angleClassification).toEqual("acute");
   });
@@ -89,7 +90,8 @@ describe('TriangleService', () => {
     service.sideB = 4;
     service.sideC = 5;
 
-    service.getTriangleAngleClassification();
+    service.setTriangleAngles();
+    service.setTriangleAngleClassification();
 
     expect(service.angleClassification).toEqual("right");
   });
@@ -99,7 +101,8 @@ describe('TriangleService', () => {
     service.sideB = 3;
     service.sideC = 5;
 
-    service.getTriangleAngleClassification();
+    service.setTriangleAngles();
+    service.setTriangleAngleClassification();
 
     expect(service.angleClassification).toEqual("obtuse");
   });
@@ -145,55 +148,55 @@ describe('TriangleService', () => {
   });
 
   it('should determine acute equilateral triangle', () => {
-    service.sideA = 4;
-    service.sideB = 4;
-    service.sideC = 4;
+    let sideA = 4;
+    let sideB = 4;
+    let sideC = 4;
 
-    service.calculateTriangle();
+    service.calculateTriangle(sideA, sideB, sideC);
 
     expect(service.angleClassification).toEqual('acute');
     expect(service.typeClassification).toEqual('equilateral');
   });
 
   it('should determine acute isosceles triangle', () => {
-    service.sideA = 4;
-    service.sideB = 5;
-    service.sideC = 5;
+    let sideA = 4;
+    let sideB = 5;
+    let sideC = 5;
 
-    service.calculateTriangle();
+    service.calculateTriangle(sideA, sideB, sideC);
 
     expect(service.angleClassification).toEqual('acute');
     expect(service.typeClassification).toEqual('isosceles');
   });
 
   it('should determine acute scalene triangle', () => {
-    service.sideA = 4;
-    service.sideB = 5;
-    service.sideC = 6;
+    let sideA = 4;
+    let sideB = 5;
+    let sideC = 6;
 
-    service.calculateTriangle();
+    service.calculateTriangle(sideA, sideB, sideC);
 
     expect(service.angleClassification).toEqual('acute');
     expect(service.typeClassification).toEqual('scalene');
   });
 
   it('should determine right isosceles triangle', () => {
-    service.sideA = 70;
-    service.sideB = 70;
-    service.sideC = 99;
+    let sideA = 3;
+    let sideB = 3;
+    let sideC = 3 * Math.sqrt(2);
 
-    service.calculateTriangle();
+    service.calculateTriangle(sideA, sideB, sideC);
 
     expect(service.angleClassification).toEqual('right');
     expect(service.typeClassification).toEqual('isosceles');
   });
 
   it('should determine right scalene triangle', () => {
-    service.sideA = 3;
-    service.sideB = 4;
-    service.sideC = 5;
+    let sideA = 3;
+    let sideB = 4;
+    let sideC = 5;
 
-    service.calculateTriangle();
+    service.calculateTriangle(sideA, sideB, sideC);
 
     expect(service.angleClassification).toEqual('right');
     expect(service.typeClassification).toEqual('scalene');
