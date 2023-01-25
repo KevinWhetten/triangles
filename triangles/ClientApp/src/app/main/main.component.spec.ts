@@ -2,7 +2,7 @@
 
 import {MainComponent} from './main.component';
 
-describe('HomeComponent', () => {
+describe('MainComponent', () => {
   let component: MainComponent;
   let fixture: ComponentFixture<MainComponent>;
 

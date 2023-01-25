@@ -19,6 +19,6 @@ export class ValidityComponent {
     this.validity = this.triangleService.validity;
     this.angleClassification = this.triangleService.angleClassification;
     this.typeClassification = this.triangleService.typeClassification;
-    return this.validity == "valid";
+    return this.validity === "valid";
   }
 }

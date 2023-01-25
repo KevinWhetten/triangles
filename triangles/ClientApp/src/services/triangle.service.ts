@@ -28,7 +28,7 @@ export class TriangleService {
     if (this.validity == 'valid') {
       this.setTriangleAngles();
       this.setTriangleAngleClassification();
-      this.getTriangleTypeClassification();
+      this.setTriangleTypeClassification();
     } else {
       this.angleClassification = '';
       this.typeClassification = '';
@@ -73,7 +73,7 @@ export class TriangleService {
     return Math.max(...[this.angleA, this.angleB, this.angleC]);
   }
 
-  getTriangleTypeClassification() {
+  setTriangleTypeClassification() {
     if (this.sideA === this.sideB || this.sideA === this.sideC || this.sideB === this.sideC) {
       if (this.sideA === this.sideB && this.sideB === this.sideC) {
         this.typeClassification = "equilateral";
